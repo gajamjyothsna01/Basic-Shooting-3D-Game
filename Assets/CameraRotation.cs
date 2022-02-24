@@ -21,7 +21,11 @@ public class CameraRotation : MonoBehaviour
         mousey = Input.GetAxis("Mouse Y");
 
         //transform.rotation = Quaternion.Euler(0, 90, 0) * Quaternion.Euler(0, 30, 0); //It always shows 120
-        transform.rotation = transform.rotation * Quaternion.Euler(-mousey+rotationSpeed, mousex+rotationSpeed , 0);
+        transform.rotation = transform.rotation * Quaternion.Euler(0, mousex*rotationSpeed , 0);
         //transform.rotation = transform.rotation * Quaternion.Euler(mousex, 0, 0);
+        Camera camera = GetComponentInChildren<Camera>();
+        camera.transform.localRotation = Quaternion.Euler(-mousey, 0, 0) * camera.transform.localRotation;
+             
+        
     }
 }
