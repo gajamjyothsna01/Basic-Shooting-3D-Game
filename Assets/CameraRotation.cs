@@ -25,7 +25,7 @@ public class CameraRotation : MonoBehaviour
         //transform.rotation = transform.rotation * Quaternion.Euler(mousex, 0, 0);
         Camera camera = GetComponentInChildren<Camera>();
         camera.transform.localRotation = Quaternion.Euler(-mousey, 0, 0) * camera.transform.localRotation;
-             
+          
         
     }
 }
